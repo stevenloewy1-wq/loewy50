@@ -227,6 +227,19 @@ figcaption {
 
 .confirmation-title { font-weight: 600; color: var(--gold); margin-bottom: .2rem; }
 
+.calendar-links { margin-top: .35rem; }
+
+.calendar-links a {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 2.75rem;
+  color: var(--gold);
+  font-size: .875rem;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
 .confirmation:target, .form-fallback:target { display: block; }
 .rsvp-form[hidden], .confirmation:target ~ .rsvp-form { display: none; }
 .form-fallback { margin-bottom: .9rem; color: #ffe3b8; font-size: .84rem; }
