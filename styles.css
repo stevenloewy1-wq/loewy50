@@ -1,0 +1,155 @@
+@font-face {
+  font-family: Poppins;
+  src: url("poppins-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("poppins-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("poppins-extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+:root {
+  --pine: #193528;
+  --rust: #a03c2e;
+  --cream: #fbf2e3;
+  --warm-white: #fff7ea;
+  --soft-white: #e9ddc8;
+  --gold: #f4cd90;
+  --line: #567464;
+  font-family: Poppins, system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--pine);
+  background: #eee3d3;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 3.75rem);
+  background: radial-gradient(ellipse at 27% 8%, #f7eddd, #ebdfcd 78%);
+}
+
+h1, p, figure { margin: 0; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+.invite {
+  width: min(100%, 38rem);
+  margin: 0 auto;
+  overflow: clip;
+  border-radius: clamp(1.1rem, 2.5vw, 1.5rem);
+  background: var(--cream);
+  box-shadow: 0 1px 2px #38261613, 0 1.25rem 4.5rem #533c241a;
+}
+
+.celebration, .details-panel { padding: clamp(1.4rem, 6.4vw, 3.2rem); }
+
+.intro {
+  margin-bottom: .55rem;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  color: #4e5042;
+}
+
+.birthday-title {
+  font-size: clamp(1.95rem, 8.2vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  word-spacing: .07em;
+}
+
+.birthday-title span {
+  display: block;
+  margin: .095em 0 .12em;
+  font-size: clamp(6.8rem, 24vw, 10rem);
+  line-height: .84;
+  letter-spacing: -.073em;
+  color: var(--rust);
+}
+
+.party-name {
+  margin-top: clamp(.88rem, 2vw, 1.18rem);
+  font-size: clamp(1.06rem, 3.4vw, 1.38rem);
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -.016em;
+}
+
+.party-scene { margin-top: clamp(1.05rem, 3.7vw, 1.65rem); }
+
+.party-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.33;
+  object-fit: cover;
+  object-position: 50% 53%;
+  border-radius: .6rem;
+  background: #524136;
+}
+
+figcaption {
+  margin-top: .55rem;
+  color: var(--rust);
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.details-panel { color: var(--warm-white); background: var(--pine); }
+
+.event-date {
+  color: var(--gold);
+  font-size: clamp(1.17rem, 3.75vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.038em;
+}
+
+.event-time { margin-top: .28rem; font-size: 1.05rem; line-height: 1.5; }
+.event-venue { margin-top: 1.15rem; font-size: 1rem; font-weight: 600; line-height: 1.45; }
+.event-address { margin-top: .18rem; color: var(--soft-white); font-size: .875rem; line-height: 1.55; }
+
+.reply {
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1.2rem;
+}
+
+.rsvp-frame {
+  display: block;
+  width: 100%;
+  height: 45rem;
+  border: 0;
+  border-radius: .65rem;
+  background: var(--cream);
+}
+
+.rsvp-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-top: .25rem;
+  color: var(--gold);
+  font-size: .875rem;
+  text-underline-offset: .22em;
+}
+
+@media (max-width: 27rem) {
+  .rsvp-frame { height: 53rem; }
+}
