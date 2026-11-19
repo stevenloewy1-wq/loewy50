@@ -9,6 +9,7 @@
   <title>Loewy turning 50!</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="rsvp.js" defer></script>
 </head>
 <body>
   <main class="invite">
@@ -35,17 +36,67 @@
         <p class="event-date"><time datetime="2026-12-11">Friday, December 11</time></p>
         <p class="event-time"><time datetime="2026-12-11T18:30:00-07:00">6:30</time> to <time datetime="2026-12-11T22:30:00-07:00">10:30 PM</time></p>
         <p class="event-venue">Loewy’s house</p>
-        <p class="event-address">The street address is on your invite.</p>
+        <p class="event-address">1342 South 1500 East</p>
       </section>
 
-      <section class="reply" aria-label="RSVP" id="rsvp">
-        <iframe
-          class="rsvp-frame"
-          title="RSVP for Loewy’s 50th"
-          src="https://docs.google.com/forms/d/e/1FAIpQLScaWOuqjOjZRtuHP-WJ9EhXrUT5Eem7ZE-yrtxDjogGMzCIag/viewform?embedded=true"
-          loading="lazy"
-        ></iframe>
-        <a class="rsvp-link" href="https://docs.google.com/forms/d/e/1FAIpQLScaWOuqjOjZRtuHP-WJ9EhXrUT5Eem7ZE-yrtxDjogGMzCIag/viewform" target="_blank" rel="noopener">Open the RSVP form in a new tab</a>
+      <section class="reply-section" aria-labelledby="rsvp-title" id="rsvp">
+        <h2 id="rsvp-title">RSVP</h2>
+
+        <div class="confirmation" tabindex="-1" id="rsvp-yes">
+          <p class="confirmation-title">RSVP received</p>
+          <p>See you on December 11!</p>
+        </div>
+        <div class="confirmation" tabindex="-1" id="rsvp-no">
+          <p class="confirmation-title">RSVP received</p>
+          <p>Thanks for letting me know.</p>
+        </div>
+        <p class="form-fallback" id="rsvp-invalid">Enter your name and choose whether you can make it.</p>
+        <p class="form-fallback" id="rsvp-unavailable">Your reply didn’t go through. Please try again.</p>
+
+        <form class="rsvp-form" method="post" action="https://loewy-50th.marq-8544.chatgpt.site/api/rsvp">
+          <div class="rsvp-extra" aria-hidden="true">
+            <label for="rsvp-site">Leave this blank</label>
+            <input id="rsvp-site" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div>
+            <label class="field-label" for="rsvp-name">Your name</label>
+            <input class="text-input" id="rsvp-name" name="name" required maxlength="100" autocomplete="name">
+          </div>
+
+          <fieldset class="choice-field">
+            <legend class="field-label">Can you make it?</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="attending" value="yes" required>
+                <span>Count me in</span>
+              </label>
+              <label class="choice">
+                <input id="reply-no" type="radio" name="attending" value="no" required>
+                <span>Can’t make it</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="party-size">
+            <label class="field-label" for="rsvp-size">Total guests, including you</label>
+            <select class="text-input" name="partySize" id="rsvp-size">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <button class="rsvp-button" type="submit">Send RSVP</button>
+          <p class="form-feedback" id="rsvp-feedback" role="alert"></p>
+        </form>
       </section>
     </div>
   </main>
