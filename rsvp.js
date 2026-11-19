@@ -29,7 +29,8 @@ form.addEventListener("submit", async (event) => {
 
     if (response.ok && (reply === "yes" || reply === "no")) {
       const confirmation = document.getElementById("rsvp-" + reply);
-      confirmation.classList.add("is-active");
+      form.hidden = true;
+      confirmation.hidden = false;
       confirmation.focus();
     } else {
       feedback.textContent = reply === "invalid" ? errors.invalid : errors.unavailable;
