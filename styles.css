@@ -113,6 +113,8 @@ figcaption {
   line-height: 1.5;
 }
 
+.whisky-note { margin-top: .65rem; }
+
 .details-panel { color: var(--warm-white); background: var(--pine); }
 
 .event-date {
